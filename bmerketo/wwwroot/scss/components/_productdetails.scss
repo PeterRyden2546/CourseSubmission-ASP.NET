@@ -1,0 +1,95 @@
+﻿.product-details {
+
+    .container {
+
+        .row {
+
+            .images-placeholder {
+
+                .image-product {
+                    margin: 0;
+                }
+
+                .images-product {
+                    display: flex;
+                    justify-content: start;
+
+                    .small-product-image {
+                        padding: 2px;
+                    }
+                }
+            }
+
+            .text-product {
+                .box-div {
+                    border: 0.5px solid;
+                    border-color: $color-theme-2;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .circles {
+                .circle {
+                    margin: 3px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                }
+
+                .red {
+                    background-color: rgb(255, 62, 62);
+                }
+
+                .yellow {
+                    background-color: rgb(254, 254, 70);
+                }
+
+                .green {
+                    background-color: rgb(97, 255, 97);
+                }
+            }
+        }
+
+        .row {
+            margin-top: 100px;
+
+            .box-div {
+                border: 0.5px solid;
+                border-color: $color-theme-2;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .first-div {
+                background-color: $color-theme-1;
+                color: aliceblue;
+                border-color: $color-theme-1;
+            }
+
+            .line {
+                border: 0.5px solid;
+                border-color: $color-theme-2;
+                height: 0.5px;
+            }
+        }
+
+        .row {
+            a {
+                color: $color-dark-3;
+            }
+
+            .line {
+                border: 0.5px solid;
+                border-color: $color-theme-2;
+                height: 0.5px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

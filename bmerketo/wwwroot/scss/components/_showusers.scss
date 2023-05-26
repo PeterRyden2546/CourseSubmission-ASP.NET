@@ -1,0 +1,50 @@
+﻿.user-container {
+    padding: 20px 0 60px 0;
+
+    @include lg {
+        padding: 80px 0;
+    }
+
+    .container {
+        border: 0px solid $color-dark-5;
+        padding: 30px;
+        margin-top: 30px;
+
+        @include md {
+            border: 1px solid $color-dark-5;
+        }
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .user-row {
+        margin: 20px;
+        display: grid;
+        column-gap: 30px;
+        row-gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "user-first user-last user-email user-phone user-update";
+
+        .user-first {
+            grid-area: user-first;
+        }
+
+        .user-last {
+            grid-area: user-last;
+        }
+
+        .user-email {
+            grid-area: user-email;
+        }
+
+        .user-phone {
+            grid-area: user-phone;
+        }
+
+        .user-update {
+            grid-area: user-update;
+        }
+    }
+}

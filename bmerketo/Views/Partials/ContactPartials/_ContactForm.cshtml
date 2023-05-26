@@ -1,0 +1,42 @@
+﻿@model ContactViewModel
+
+<section class="contact-form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <div class="title">Write something</div>
+
+        <form method="post" novalidate>
+            <div class="name form-group">
+                <label asp-for="Name"></label>
+                <input id="name" type="name" asp-for="Name" onkeyup="validate(event)">
+                <span asp-validation-for="Name" class="error"></span>
+            </div>
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input id="email" type="email" asp-for="Email" onkeyup="validate(event)">
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input id="phone" type="text" asp-for="PhoneNumber">
+            </div>
+            <div class="companyName form-group">
+                <label asp-for="CompanyName"></label>
+                <input id="company" type="text" asp-for="CompanyName">
+            </div>
+            <div class="message form-group">
+                <label asp-for="Message"></label>
+                <textarea id="message" type="textarea" asp-for="Message" onkeyup="validate(event)"></textarea>
+                <span asp-validation-for="Message" class="error"></span>
+            </div>
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    Save my name, email in the this browser for the next time I comment.
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+</section>

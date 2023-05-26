@@ -1,0 +1,19 @@
+﻿@model List<CategoryViewModel>
+
+@{
+    ViewData["Title"] = "All Categories";
+}
+<div style="padding: 100px;">
+    <h1>Categories</h1>
+    @if(Model != null)
+    {
+        foreach (var category in Model)
+        {
+            <p>@category.Name</p>
+        }
+    }
+    
+
+    <a class="btn-theme m-2" asp-controller="categories" asp-action="add">Add CATEGORY</a>
+</div>
+

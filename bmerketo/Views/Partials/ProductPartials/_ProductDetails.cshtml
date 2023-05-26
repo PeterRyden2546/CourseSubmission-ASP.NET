@@ -1,0 +1,120 @@
+﻿@{
+    var product = ViewBag.Product;
+    var categories = ViewBag.Categories;
+    var related = ViewBag.Related;
+}
+
+<section class="product-details mx-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 images-placeholder">
+                <div class="image-product col-12">
+                    <img src="~/images/placeholders/501x430.svg" alt="product" />
+                </div>
+                <div class="images-product col-12">
+                    <img src="~/images/placeholders/120x113.svg" alt="product" class="small-product-image pt-1 pe-1" />
+                    <img src="~/images/placeholders/120x113.svg" alt="product" class="small-product-image pt-1 pe-1" />
+                    <img src="~/images/placeholders/120x113.svg" alt="product" class="small-product-image pt-1 pe-1" />
+                    <img src="~/images/placeholders/120x113.svg" alt="product" class="small-product-image pt-1" />
+                </div>
+            </div>
+            <div class="col-6 text-product">
+                <div class="col-12 ingress-product" style="border-bottom: solid 0.5px #FAEFEF;">
+                    <h2>@product.Name</h2>
+                    <p class="pb-2">@product.Ingress</p>
+                </div>
+                <div class="col-6 d-flex">
+                    <span>&#11088;</span>
+                    <span>&#11088;</span>
+                    <span>&#11088;</span>
+                    <span>&#11088;</span>
+                    <span>&#11088;</span>
+                    <p class="px-2">16 Reviews</p>
+                </div>
+                <div class="col-2">
+                    <h1 style="font: bold;">$@product.Price</h1>
+                </div>
+                <div class="col-9 d-flex">
+                    <div class="col-6 d-flex">
+                        <div class="col-3 box-div">
+                            @if(product.Quantity <= 5)
+                            {
+                                @product.Quantity
+                            }  
+                        </div>
+                        <div class="col-3 box-div">
+                            @if (product.Quantity > 5 && product.Quantity <10)
+                            {
+                                @product.Quantity
+                            }
+                        </div>
+                        <div class="col-3 box-div">
+                            @if (product.Quantity >= 10)
+                            {
+                                @product.Quantity
+                            }
+                        </div>
+                    </div>
+                    <div class="ms-1 col-6">
+                        <button class="btn-theme btn">Add to cart<i class="ms-2 add-cart fa-regular fa-cart-plus"></i></button>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="col-2 d-flex circles m-3">
+                        <div class="col-4 circle red"></div>
+                        <div class="col-4 circle yellow"></div>
+                        <div class="col-4 circle green"></div>
+                    </div>
+                    <div class="m-3">
+                        <p>SKU: N/A</p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn-outline-white box-div px-5">Add to wishlist</button>
+                </div>
+                <div class="col-12 d-flex my-3">
+                    <p>Category:  
+                        @foreach(var category in categories)
+                        {
+                           <p> @category.Name</p> <p>/</p>
+                        }
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex">
+                <div class="col-3 box-div first-div">DESCRIPTION</div>
+                <div class="col-3 box-div">ADDITIONAL INFO</div>
+                <div class="col-3 box-div">REVIEWS</div>
+                <div class="col-3 box-div">SHIPPING & DELIVERY</div>
+            </div>
+            <div class="col-12 mt-5">
+                <h3>@product.Name</h3>
+            </div>
+            <div class="col-7 my-4">
+                <p>@product.Description</p>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>Related Products</h3>
+            </div>
+            <div class="col-12 d-flex">
+                @foreach(var item in related)
+                {
+                    <div class="col-3 my-3 me-3">
+                        
+                        <img src="~/images/placeholders/270x295.svg" />
+                        <h4 class="pt-3">@item.Name</h4>
+                        <h5>$@item.Price</h5>
+                    </div>
+                }
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+</section>

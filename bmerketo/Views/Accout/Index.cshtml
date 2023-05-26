@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Your account";
+    var userName = User.Identity?.Name;
+    var profile = await Profile.GetProfileAsync(userName!);
+    var user = await Profile.GetUserAsync(userName!);
+
+}
+
+<div class="account-user">
+    <div class="account-title">
+        <h4>Account Information!</h4>
+    </div>
+    <div class="container">
+        <div class="account-image">
+            @if (profile.ImageUrl != null)
+            {
+                <iframe src="@profile.ImageUrl"></iframe>
+            }
+            else
+            {
+                <img src="~/images/placeholders/270x295.svg" />
+            }
+        </div>
+        <div class="account-info">
+            <p>Email: @User.Identity!.Name</p>
+            <p>Name: @user.FirstName @user.LastName</p>
+            @if (user.PhoneNumber != null)
+            {
+                <p>Phone Number: @user.PhoneNumber</p>
+            }
+            <p>City: @profile.City</p>
+            <p>Street: @profile.StreetName</p>
+            <p>Postal Code: @profile.PostalCode</p>
+            @if (profile.CompanyName != null)
+            {
+                <p>Company: @profile.CompanyName</p>
+            }
+
+        </div>
+    </div>    
+</div>
+
+

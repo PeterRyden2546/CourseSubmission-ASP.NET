@@ -1,0 +1,21 @@
+﻿@{
+    var showCase = ViewBag.ShowCase;
+}
+
+@if (showCase != null)
+{
+    <section class="showcase">
+        <div class="container">
+            <div class="content">
+                <div class="ingress">WELCOME TO BMERKETO SHOP</div>
+                <div class="title">@showCase.Name</div>
+                <a class="btn-theme m-2" asp-controller="product" asp-action="index" asp-route-id="@showCase.ArticleNumber">SHOP NOW</a>
+
+
+            </div>
+            <div class="content-image">
+                <img src="~/images/placeholders/625x647.svg" alt="@showCase.Name">
+            </div>
+        </div>
+    </section>
+}

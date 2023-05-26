@@ -1,0 +1,61 @@
+﻿@model ProductRegistrationViewModel
+
+@{
+    ViewData["Title"]="Product Registration";
+}
+
+<section class="add-product-form">
+    <div class="container">
+        <div class="title">
+            <h3>Add Products</h3>
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <form method="post" novalidate>
+            <div class="article-number form-group">
+                <label asp-for="ArticleNumber"></label>
+                <input asp-for="ArticleNumber" id="article-number" type="text">
+            </div>
+            <div class="product-name form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" id="product-name" type="text">
+            </div>
+            <div class="product-ingress form-group">
+                <label asp-for="Ingress"></label>
+                <textarea asp-for="Ingress" id="product-ingress"></textarea>
+            </div>
+            <div class="product-description form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" id="product-description"></textarea>
+            </div>
+            <div class="quantity form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" id="quantity" type="text">
+            </div>
+            <div class="price form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" id="price" type="text">
+            </div>
+            <div class="product-tags">
+                @foreach(SelectListItem tag in ViewBag.Tags)
+                {
+                    <div>
+                        <label for="@tag.Value" class="form-check-label">@tag.Text</label>
+                        <input type="checkbox" name="Tags" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
+                    </div>
+                }
+            </div>
+            <div class="product-categories">
+                @foreach (SelectListItem category in ViewBag.Categories)
+                {
+                    <div>
+                        <label for="@category.Value" class="form-check-label">@category.Text</label>
+                        <input type="checkbox" name="Categories" value="@category.Value" checked="@category.Selected" class="form-check-input" />
+                    </div>
+                }
+            </div>
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+</section>

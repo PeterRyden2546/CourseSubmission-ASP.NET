@@ -1,0 +1,83 @@
+﻿.add-product-form {
+    padding: 20px 0 60px 0;
+
+    @include lg {
+        padding: 100px 0;
+    }
+
+    .container {
+        border: 0px solid $color-dark-5;
+        padding: 30px;
+
+        @include md {
+            border: 1px solid $color-dark-5;
+        }
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    form {
+        display: grid;
+        column-gap: 30px;
+        row-gap: 30px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "article-number" "product-name" "ingress" "product-description" "quantity" "price" "tags" "categories" "button";
+
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "article-number product-name" "ingress ingress" "product-description product-description" "quantity price" "tags categories" "button button";
+        }
+
+        .article-number {
+            grid-area: article-number;
+        }
+
+        .product-name {
+            grid-area: product-name;
+        }
+
+        .product-ingress {
+            grid-area: ingress;
+        }
+
+        .product-description {
+            grid-area: product-description;
+        }
+
+        .quantity {
+            grid-area: quantity;
+        }
+
+        .price {
+            grid-area: price;
+        }
+
+        .product-tags{
+            grid-area: tags;
+        }
+
+        .product-categories{
+            grid-area: categories;
+        }
+
+        .button {
+            grid-area: button;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            grid-area: button;
+
+            @include lg {
+                display: flex;
+                justify-self: flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+﻿@model TagViewModel
+
+@{
+    ViewData["Title"] = "Add Tag";
+}
+
+<section class="category-form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <h3 class="title">Add Category</h3>
+
+        <form method="post" novalidate>
+            <div class="tag-name form-group">
+                <label asp-for="Name"></label>
+                <input id="category-name" type="name" asp-for="Name" onkeyup="validate(event)">
+                <span asp-validation-for="Name" class="error"></span>
+            </div>
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+</section>

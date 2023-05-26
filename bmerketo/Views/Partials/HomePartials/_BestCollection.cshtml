@@ -1,0 +1,35 @@
+﻿@{
+    var best = ViewBag.BestCollection;
+    var categories = ViewBag.BestCategories;
+}
+
+
+@if (best != null)
+{
+    <section class="best-collection">
+        <div class="container">
+            <h1 class="collection-title">Best Collection</h1>
+
+            @if (best != null)
+            {
+                <ul class="categories">
+                    @foreach (var category in categories)
+                    {
+                        <li class="category-item">@category.Name</li>
+                    }
+                </ul>
+            }
+
+            <div class="collection-grid">
+                @foreach (var item in best!)
+                {
+                    <partial name="/Views/Partials/HomePartials/_GridCollectionItem.cshtml" model="item" />
+                }
+            </div>
+
+            <div class="load-more">
+                <button class="btn-outline-white">LOAD MORE <i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        </div>
+    </section>
+}

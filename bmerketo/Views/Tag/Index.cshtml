@@ -1,0 +1,19 @@
+﻿@model List<TagViewModel>
+
+@{
+    ViewData["Title"] = "AllTags";
+}
+
+<div style="padding: 100px;">
+    <h1>Tags</h1>
+    @if (Model != null)
+    {
+        foreach (var tag in Model)
+        {
+            <p>@tag.Name</p>
+        }
+    }
+
+
+    <a class="btn-theme m-2" asp-controller="tag" asp-action="add">Add CATEGORY</a>
+</div>

@@ -1,0 +1,76 @@
+﻿@model AccountRegistrationViewModel
+@{
+    ViewData["Title"] = "Register an Account";
+}
+
+
+<section class="account-registration-form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <div class="title">
+            <div>
+                <h7>Account Reigstration</h7>
+            </div>
+            <small><span class="text-danger">All labels with * is required.</span></small>
+        </div>
+
+        <form enctype="multipart/form-data" method="post" novalidate>
+            <div class="account-first-name form-group">
+                <label asp-for="FirstName"></label>
+                <input type="firstname" asp-for="FirstName" onkeyup="validate(event)">
+                <span asp-validation-for="FirstName" class="error"></span>
+            </div>
+            <div class="account-last-name form-group">
+                <label asp-for="LastName"></label>
+                <input type="lastname" asp-for="LastName" onkeyup="validate(event)">
+                <span asp-validation-for="LastName" class="error"></span>
+            </div>
+            <div class="account-street-name form-group">
+                <label asp-for="StreetName"></label>
+                <input type="streetname" asp-for="StreetName" onkeyup="validate(event)">
+                <span asp-validation-for="StreetName" class="error"></span>
+            </div>
+            <div class="account-postal-code form-group">
+                <label asp-for="PostalCode"></label>
+                <input type="postalcode" asp-for="PostalCode" onkeyup="validate(event)">
+                <span asp-validation-for="PostalCode" class="error"></span>
+            </div>
+            <div class="account-city form-group">
+                <label asp-for="City"></label>
+                <input type="text" asp-for="City" onkeyup="validate(event)">
+                <span asp-validation-for="City" class="error"></span>
+            </div>
+            <div class="account-phone-number form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input type="text" asp-for="PhoneNumber">
+            </div>
+            <div class="account-company form-group">
+                <label asp-for="Company"></label>
+                <input type="text" asp-for="Company">
+            </div>
+            <div class="account-email form-group">
+                <label asp-for="Email"></label>
+                <input type="email" asp-for="Email" onkeyup="validate(event)">
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div class="account-password form-group">
+                <label asp-for="Password"></label>
+                <input type="password" asp-for="Password" onkeyup="validate(event)">
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+            <div class="account-confirm-password form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input type="password" asp-for="ConfirmPassword" onkeyup="validate(event)">
+                <span asp-validation-for="ConfirmPassword" class="error"></span>
+            </div>
+            <div class="account-profile-image form-group">
+                <label asp-for="ProfileImage"></label>
+                <input type="file" asp-for="ProfileImage" class="form-control">
+            </div>
+
+
+
+            <button class="btn-theme">Register</button>
+        </form>
+    </div>
+</section>

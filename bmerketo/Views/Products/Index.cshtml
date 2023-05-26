@@ -1,0 +1,50 @@
+﻿@model List<ProductRegistrationViewModel>
+
+@{
+    ViewData["Title"] = "All Product";
+}
+
+<div class="container-product">
+    <h3 class="title">Products</h3>
+    @if (Model != null)
+    {
+        <div class="product-section">
+            <div class="product-list">
+                <h5 class="p-artcilenumber">Article Number</h5>
+                <h5 class="p-name">Product Name</h5>
+                <h5 class="p-quantity">Quantity</h5>
+                <h5 class="p-price">Price</h5>
+                <h5 class="p-tags">Tags</h5>
+                <h5 class="p-categories">Categories</h5>
+            </div>
+            @foreach (var product in Model)
+            {
+                <div class="product-list">
+                    <div class="p-artcilenumber">@product.ArticleNumber</div>
+                    <div class="p-name">@product.Name</div>
+                    <div class="p-quantity">@product.Quantity</div>
+                    <div class="p-price">@product.Price</div>
+                    <div class="p-tags">
+                        <ul>
+                        @foreach (var tag in product.Tags)
+                        {
+                            <li>@tag.Name</li>
+                        }
+                        </ul>
+                    </div>
+                    <div class="p-categories">
+                        <ul>
+                            @foreach (var category in product.Categories)
+                            {
+                                <li>@category.Name</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    <div class="to-register">
+        <a class="btn-theme" asp-controller="products" asp-action="add">PRODUCT REGISTRATION</a>
+    </div>
+</div>

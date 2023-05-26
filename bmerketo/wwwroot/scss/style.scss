@@ -1,0 +1,31 @@
+﻿@import './core/fonts';
+@import './core/colors';
+@import './core/mixins';
+
+@import './components/base';
+@import './components/buttons';
+@import './components/collectionitem';
+@import './components/collectioncontent';
+@import './components/forms';
+
+@import './components/header';
+@import './components/footer';
+@import './components/breadcrumb';
+@import './components/_map.scss';
+@import './components/_contactform.scss';
+@import './components/_accountRegister.scss';
+@import './components/_loginForm.scss';
+@import './components/_accountiformation.scss';
+@import './components/_adminhome.scss';
+@import './components/_showusers.scss';
+@import './components/_message.scss';
+@import './components/_categoryform.scss';
+@import './components/_addproducts.scss';
+@import './components/_productlist.scss';
+@import './components/_showcase.scss';
+@import './components/_bestcollection.scss';
+@import './components/_gridcollectionitem.scss';
+@import './components/_uptosell.scss';
+@import './components/_topselling.scss';
+@import './components/_newsletter.scss';
+@import './components/_productdetails.scss';

@@ -1,0 +1,66 @@
+﻿@model UserViewModel
+
+@{ViewData["Title"]="All Users";}
+
+
+<div class="user-container">
+    <div class="container">   
+        <h3 class="title">Admins</h3>
+        <div class="user-row">
+            <div class="user-first">First Name</div>
+            <div class="user-last">Last Name</div>
+            <div class="user-email">E-mail</div>
+            <div class="user-phone">Phone Number</div>
+            <div class="user-update">Update User</div>
+        </div>
+        @foreach (var admin in Model.Admins)
+        {
+            <div class="user-row">
+                <div class="user-first">@admin.FirstName</div>
+                <div class="user-last">@admin.LastName</div>
+                <div class="user-email">@admin.Email</div>
+                <div class="user-phone">
+                    @if (admin.PhoneNumber != null)
+                        @admin.PhoneNumber
+
+
+                </div>
+                @if(Model.Admins.Count > 1)
+                {
+                    <a asp-controller="user" asp-action="update-role_@admin.Id" class="btn-theme">UPDATE USER</a>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="container">
+        <h3 class="title">Users</h3>
+        <div class="user-row">
+            <div class="user-first">First Name</div>
+            <div class="user-last">Last Name</div>
+            <div class="user-email">E-mail</div>
+            <div class="user-phone">Phone Number</div>
+            <div class="user-update">Update User</div>
+        </div>
+        @foreach (var user in Model.Users)
+        {
+            <div class="user-row">
+                <div class="user-first">@user.FirstName</div>
+                <div class="user-last">@user.LastName</div>
+                <div class="user-email">@user.Email</div>
+                <div class="user-phone">
+                    @if (user.PhoneNumber != null)
+                        @user.PhoneNumber
+
+
+                </div>
+                    <a asp-controller="user" asp-action="update-role_@user.Id" class="btn-theme">UPDATE USER</a>
+            </div>
+        }
+    </div>
+    <div class="d-flex justify-content-center algin-item-center mt-5">
+        <a asp-controller="user" asp-action="newuser" class="btn-theme">ADD USER</a>
+    </div>
+</div>
+
+

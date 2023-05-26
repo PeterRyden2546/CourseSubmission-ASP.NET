@@ -1,0 +1,27 @@
+﻿@model List<Contact>
+
+@{
+    ViewData["Title"] = "All Contacts";
+}
+<div class="user-container">
+    <div class="container">
+        <h3 class="title">All message</h3>
+        
+            @if (Model != null)
+            {
+                foreach (var message in Model)
+                {
+                    <div class="message-row">
+                        <div class="message-date">@message.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</div>
+                        <div class="message-name">@message.Name</div>
+                        <div class="message-email">@message.Email</div>
+                        <div class="message-phone">@message.PhoneNumber</div>
+                        <div class="message-company">@message.CompanyName</div>
+                        <div class="message-contact">@message.Message</div>
+                    </div>
+                }
+            }
+        
+    </div>
+</div>
+

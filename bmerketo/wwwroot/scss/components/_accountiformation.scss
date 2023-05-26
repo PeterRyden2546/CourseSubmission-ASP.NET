@@ -1,0 +1,42 @@
+﻿.account-user {
+    padding: 20px 0 60px 0;
+
+    @include lg {
+        padding: 80px 0;
+    }
+
+    .account-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        border: 0px solid $color-dark-5;
+        padding: 30px;
+
+        @include md {
+            border: 1px solid $color-dark-5;
+        }
+
+        display: grid;
+        column-gap: 30px;
+        row-gap: 30px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "account-image" "account-info";
+
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "account-image account-info";
+        }
+
+        .account-image {
+            grid-area: account-image;
+        }
+
+        .account-info {
+            grid-area: account-info;
+        }
+    }
+}
